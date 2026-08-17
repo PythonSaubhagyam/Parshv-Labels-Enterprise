@@ -1,0 +1,575 @@
+:root {
+    --yellow: #f6c400;
+    --ink: #12120f;
+    --cream: #faf9f4;
+    --muted: #676761;
+    --line: #deddd5;
+    --display: "Playfair Display", serif;
+    --body: "DM Sans", Arial, sans-serif
+}
+
+.site {
+    font-family: var(--body);
+    overflow-x: hidden
+}
+
+.site * {
+    box-sizing: border-box
+}
+
+.site .navbar {
+    height: 92px
+}
+
+.site .nav-inner {
+    height: 100%
+}
+
+.site .brand-logo {
+    height: 60px
+}
+
+.site .nav-links {
+    gap: 26px
+}
+
+.site .nav-links button {
+    padding: 12px 0
+}
+
+.site .nav-links .active {
+    border-bottom: 3px solid var(--yellow)
+}
+
+.site .nav-links button.active:after,
+.site .nav-links button.active::after {
+    display: none !important
+}
+
+.site .nav-links .nav-cta {
+    padding: 12px 17px
+}
+
+.site .hero {
+    min-height: 690px;
+    background: linear-gradient(#ffffffd9, #ffffffd9), url('/background.png') center/cover
+}
+
+.hero-orb {
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    right: -130px;
+    top: -165px;
+    border: 1px solid #e7e4d6;
+    box-shadow: 0 0 0 80px #f6c4000e, 0 0 0 160px #f6c40009
+}
+
+.hero-grid {
+    grid-template-columns: 40% 60%;
+    gap: 34px;
+    padding: 72px 0
+}
+
+.site .hero h1 {
+    font-size: clamp(48px, 5.5vw, 77px);
+    line-height: 1.04;
+    margin: 20px 0
+}
+
+.site .hero h1 em,
+.site h2 span {
+    background: none;
+    color: var(--yellow);
+    font-style: normal
+}
+
+.site .hero-copy>div>p {
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 500px
+}
+
+.site .hero-visual {
+    height: 460px
+}
+
+.site .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 26px 50px #0000001c
+}
+
+.site .slide-indicators {
+    margin-top: 0
+}
+
+.site .about-section,
+.site .team-section,
+.site .quality-section,
+.site .contact-section,
+.site .products-section,
+.site .videos-section {
+    padding: 110px 0 !important
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 86px;
+    align-items: center
+}
+
+.about-image {
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 24px 45px #0002
+}
+
+.site h2 {
+    font-size: clamp(38px, 4.2vw, 54px)
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 40px
+}
+
+.stats div {
+    border-left: 3px solid var(--yellow);
+    padding-left: 12px
+}
+
+.stats strong {
+    font-family: var(--display);
+    font-size: 30px;
+    display: block
+}
+
+.stats small {
+    font-size: 11px;
+    color: var(--muted)
+}
+
+.team-section {
+    background: var(--cream)
+}
+
+.section-intro {
+    max-width: 610px;
+    margin-bottom: 48px
+}
+
+.team-grid,
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.team-card {
+    background: #fff;
+    padding: 30px;
+    min-height: 220px
+}
+
+.team-avatar {
+    height: 48px;
+    width: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--yellow);
+    font-family: var(--display);
+    font-weight: 700;
+    margin-bottom: 26px
+}
+
+.team-card small,
+.product-info small,
+.process-card small {
+    font-size: 10px;
+    letter-spacing: .14em;
+    color: #777
+}
+
+.team-card h3,
+.video-card h3 {
+    margin: 8px 0 0;
+    font-size: 22px
+}
+
+.team-card p,
+.video-card p {
+    font-size: 13px;
+    margin: 5px 0
+}
+
+.site .products-section,
+.site .videos-section {
+    background: var(--ink);
+    color: #fff
+}
+
+.site .light .eyebrow {
+    color: #ddd
+}
+
+.light p {
+    color: #aaa
+}
+
+.site .product-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important
+}
+
+.site .product-card {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important
+}
+
+.site .product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px #0003 !important
+}
+
+.site .product-art {
+    height: 235px !important
+}
+
+.site .product-art img {
+    object-fit: cover !important
+}
+
+.product-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background: #0005;
+    color: #fff;
+    opacity: 0;
+    transition: .3s;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1
+}
+
+.site .product-info {
+    padding: 20px !important
+}
+
+.site .product-info h3 {
+    font-size: 20px !important;
+    margin: 8px 0 !important
+}
+
+.site .product-info p {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    min-height: 0 !important
+}
+
+.quality-section {
+    background: #f7f6f0
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px
+}
+
+.process-card {
+    background: #fff
+}
+
+.process-card img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover
+}
+
+.process-card>div {
+    padding: 26px
+}
+
+.process-card h3 {
+    font-size: 27px;
+    margin: 8px 0
+}
+
+.process-card p {
+    font-size: 13px;
+    margin: 0
+}
+
+.video-card {
+    padding: 0 0 20px;
+    border-bottom: 1px solid #ffffff33
+}
+
+.video-placeholder {
+    height: 225px;
+    background: linear-gradient(135deg, #3a3932, #1e1e1b);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px
+}
+
+.video-placeholder span {
+    font-family: var(--display);
+    font-size: 44px;
+    color: #ffffff2e
+}
+
+.video-placeholder button {
+    height: 52px;
+    width: 52px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    display: grid;
+    place-items: center
+}
+
+.contact-grid {
+    gap: 100px
+}
+
+.contact-card {
+    padding: 35px
+}
+
+.footer-main {
+    grid-template-columns: 1.4fr .8fr 1.2fr
+}
+
+.footer-logo {
+    height: 72px;
+    max-width: none
+}
+
+.footer-nav {
+    margin-top: 20px
+}
+
+.copyright {
+    margin-top: 45px
+}
+
+@media(max-width:900px) {
+    .site .hero-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .site .hero-visual {
+        height: 380px
+    }
+
+    .site .product-grid {
+        grid-template-columns: repeat(3, 1fr) !important
+    }
+
+    .about-grid,
+    .contact-grid {
+        gap: 45px
+    }
+}
+
+@media(max-width:700px) {
+    .site .navbar {
+        height: 76px
+    }
+
+    .site .brand-logo {
+        height: 53px
+    }
+
+    .site .nav-links {
+        top: 76px
+    }
+
+    .site .hero-grid,
+    .about-grid,
+    .process-grid,
+    .contact-grid {
+        grid-template-columns: 1fr
+    }
+
+    .site .hero {
+        min-height: auto
+    }
+
+    .site .hero-grid {
+        padding: 65px 0
+    }
+
+    .site .hero-visual {
+        height: 330px;
+        grid-row: 1
+    }
+
+    .hero-copy {
+        grid-row: 2
+    }
+
+    .site .about-section,
+    .site .team-section,
+    .site .products-section,
+    .site .quality-section,
+    .site .videos-section,
+    .site .contact-section {
+        padding: 70px 0 !important
+    }
+
+    .about-image {
+        height: 330px
+    }
+
+    .team-grid,
+    .video-grid {
+        grid-template-columns: 1fr
+    }
+
+    .site .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important
+    }
+
+    .site .product-art {
+        height: 190px !important
+    }
+
+    .process-card img {
+        height: 270px
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr !important;
+        gap: 35px
+    }
+
+    .stats {
+        gap: 10px
+    }
+
+    .stats strong {
+        font-size: 25px
+    }
+}
+
+@media(max-width:420px) {
+    .site .product-grid {
+        grid-template-columns: 1fr !important
+    }
+
+    .site .hero-actions {
+        flex-direction: column
+    }
+
+    .site .hero-actions .btn {
+        justify-content: center
+    }
+
+    .stats {
+        grid-template-columns: 1fr
+    }
+
+    .site .hero-visual {
+        height: 270px
+    }
+}
+
+.site .eyebrow {
+    color: var(--yellow) !important;
+}
+
+.site .stats strong,
+.site .product-info small,
+.site .process-card small,
+.site .video-placeholder span,
+.site .team-card small {
+    color: var(--yellow);
+}
+
+.site .nav-cta svg,
+.site .btn-dark svg,
+.site .text-link svg,
+.site .product-overlay svg,
+.site .video-placeholder button svg,
+.site .socials a:hover svg {
+    color: var(--yellow);
+}
+
+.site .nav-cta:hover svg,
+.site .btn-dark:hover svg {
+    color: inherit;
+}
+
+.site .btn-dark:hover {
+    background: var(--yellow);
+    color: var(--ink);
+    border-color: var(--yellow);
+}
+
+.site .btn,
+.site .nav-cta {
+    border-radius: 6px !important;
+}
+
+.site .stats {
+    text-align: center;
+}
+
+.site .stats div {
+    border-left: none !important;
+    padding-left: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site .stat-icon {
+    margin-bottom: 12px;
+    color: var(--yellow);
+}
+
+.site .about-cta-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+}
+
+.site .hero-actions .btn:hover { transform: none !important; box-shadow: none !important; }
+.site .hero-text-wrapper { min-height: 280px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 15px; }
+
+.site .navbar { position: fixed !important; top: 0; left: 0; width: 100%; z-index: 1000 !important; }
+.site main { padding-top: 92px; }
+@media (max-width: 700px) { .site main { padding-top: 76px; } }
+
+.site .contact-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.site .form-group { display: flex; flex-direction: column; gap: 8px; }
+.site .form-group label { font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+.site .form-group input { padding: 14px 16px; border: 1px solid var(--line); border-radius: 6px; font-family: var(--body); font-size: 15px; background: var(--cream); outline: none; transition: 0.2s ease; width: 100%; box-sizing: border-box; }
+.site .form-group input:focus { border-color: var(--yellow); background: #fff; box-shadow: 0 0 0 3px rgba(246, 196, 0, 0.1); }
+.site .contact-form .btn { margin-top: 10px; width: 100%; justify-content: center; }
+
+.site .socials a:hover svg { stroke: var(--black); }
