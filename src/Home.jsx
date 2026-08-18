@@ -1,38 +1,171 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Facebook, Instagram, Linkedin, Menu, Play, X, Award, Users, CheckCircle } from "lucide-react";
+import { products } from "./data/products";
 
 const slides = [
   { image: "/slide2.png", label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
   { image: "/slide4.png", label: "DENIM ESSENTIALS", title: <>Built for denim. Designed for <em>identity.</em></>, copy: "Durable woven labels, satin labels, garment tags and buttons that hold their character through every wash and wear." },
   { image: "/slide3.png", label: "KURTI BRANDING", title: <>A signature finish for every <em>kurti.</em></>, copy: "From soft satin labels to premium hang tags and coordinated buttons, we create details that elevate contemporary ethnic wear." }
 ];
-const products = [["Woven Labels", "Sharp, premium woven labels for a polished brand identity.", "/woven_labels_1786528160004.png"], ["Printed Labels", "Crisp printed labels for care, size and brand information.", "/woven_edge_satin_labels_1786528176502.png"], ["Cotton Printed Labels", "Natural cotton labels in white and cream bases.", "/cotton_white_base_1786528210489.png"], ["Hang Tags", "Bold hang tags that make every garment feel considered.", "/hang_tags_1786528240919.png"], ["Heat Transfer Labels", "Seamless tagless labels for a clean wearing experience.", "/dtf_heat_transfer_1786528548667.png"], ["PU Labels", "Premium PU leather labels with metallic foil stamping.", "/pu_golden_foil_1786528598419.png"], ["Polyester Buttons", "Durable and elegant buttons for fine garments.", "/polyester_buttons_1786528749593.png"]];
 const reveal = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.65 } } };
 const View = ({ children, className = "" }) => <motion.div className={className} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>{children}</motion.div>;
 
 function Home() {
-  const [menuOpen, setMenuOpen] = useState(false); const [slide, setSlide] = useState(0); const [paused, setPaused] = useState(false); const current = slides[slide];
-  const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); };
+  const [slide, setSlide] = useState(0); const [paused, setPaused] = useState(false); const current = slides[slide];
+  const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
   useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 5000); return () => clearInterval(timer); }, [paused]);
-  return <div className="site">
-    <header className="navbar"><div className="container nav-inner"><button className="brand" onClick={() => scrollTo("home")} aria-label="Go to home"><img src="/PARSHV%20ENTERPRISE%20LOGO_page-0002.jpg" alt="Parshv Enterprise" className="brand-logo" /></button><nav className={menuOpen ? "nav-links open" : "nav-links"}>{["Home", "About", "Products", "Quality", "Videos"].map(item => <button key={item} className={item === "Home" ? "active" : ""} onClick={() => scrollTo(item === "Products" ? "products" : item.toLowerCase())}>{item}</button>)}<button onClick={() => scrollTo("contact")}>Contact</button><button className="nav-cta" onClick={() => scrollTo("contact")}>Get Quote <ArrowRight size={16} /></button></nav><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button></div></header>
+  return <>
     <main>
-      <section id="home" className="hero"><div className="hero-orb" /><div className="container hero-grid"><div className="hero-copy"><div className="hero-text-wrapper"><AnimatePresence mode="wait"><motion.div key={slide} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: .45 }}><div className="eyebrow"><span />{current.label}</div><h1>{current.title}</h1><p>{current.copy}</p></motion.div></AnimatePresence></div><div className="hero-actions"><button className="btn btn-dark" onClick={() => scrollTo("products")}>Explore Products <ArrowRight size={18} /></button><button className="btn btn-outline" onClick={() => scrollTo("contact")}>Talk to Us</button></div></div><div className="hero-visual" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}><AnimatePresence mode="wait"><motion.img key={current.image} src={current.image} alt={`${current.label} garment label set`} initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .6 }} /></AnimatePresence></div></div></section>
-      <section id="about" className="about-section"><div className="container about-grid"><View><img className="about-image" src="/slide5.png" alt="Garment labeling collection" /></View><View><div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div><h2>Small details. <span>Big brand impact.</span></h2><p>We partner with fashion brands and garment manufacturers to craft labels and accessories that look exceptional and perform reliably. Every order is guided by material expertise, manufacturing precision and respect for your brand.</p><div className="stats"><div><Award size={28} className="stat-icon" /><strong>5+</strong><small>Years of expertise</small></div><div><Users size={28} className="stat-icon" /><strong>500+</strong><small>Brands served</small></div><div><CheckCircle size={28} className="stat-icon" /><strong>100%</strong><small>Quality focus</small></div></div><div className="about-cta-wrapper"><button className="btn btn-dark" onClick={() => scrollTo("products")}>Discover our collection <ArrowRight size={18} /></button></div></View></div></section>
-      <section className="team-section"><div className="container"><View className="section-intro"><div className="eyebrow"><span />MANAGEMENT TEAM</div><h2>Guided by craft and <span>commitment.</span></h2><p>Our team combines product knowledge, production discipline and a shared focus on serving garment brands well.</p></View><div className="team-grid">{["Leadership", "Production", "Client Success"].map(role => <View key={role} className="team-card"><div className="team-avatar">PE</div><small>{role.toUpperCase()}</small><h3>Team member</h3><p>Profile and photograph coming soon.</p></View>)}</div></div></section>
-      <section id="products" className="products-section"><div className="container"><View className="section-intro light"><div className="eyebrow"><span />OUR COLLECTION</div><h2>Labels made to <span>last.</span></h2></View><div className="product-grid">{products.map(([title, description, image], index) => <View key={title} className="product-card"><div className="product-art"><img src={image} alt={title} /><div className="product-overlay">View product <ArrowRight size={14} /></div></div><div className="product-info"><small>0{index + 1}</small><h3>{title}</h3><p>{description}</p></div></View>)}</div></div></section>
-      <section id="quality" className="quality-section"><div className="container"><View className="section-intro"><div className="eyebrow"><span />OUR PROCESS</div><h2>Production with <span>purpose.</span></h2><p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p></View><div className="process-grid"><View className="process-card"><img src="/quality-image.png" alt="Garment label production process" /><div><small>01 — PRODUCTION</small><h3>Made with precision</h3><p>Specialist manufacturing for clean detail and dependable finishes.</p></div></View><View className="process-card"><img src="/image1.png" alt="Quality inspection of garment labels" /><div><small>02 — QUALITY CHECK</small><h3>Inspected with care</h3><p>Every order is checked for clarity, alignment, colour and finish.</p></div></View></div></div></section>
-      <section id="videos" className="videos-section"><div className="container"><View className="section-intro light"><div className="eyebrow"><span />BEHIND THE LABEL</div><h2>See our work <span>in motion.</span></h2><p>Video stories of our craft, process and product details will be added here.</p></View><div className="video-grid">{["Label production", "Quality inspection", "Product showcase"].map((title, index) => <View className="video-card" key={title}><div className="video-placeholder"><span>0{index + 1}</span><button aria-label={`Play ${title}`}><Play size={18} fill="currentColor" /></button></div><h3>{title}</h3><p>Video coming soon</p></View>)}</div></div></section>
-      <section id="contact" className="contact-section"><div className="container contact-grid"><View><div className="eyebrow"><span />LET'S WORK TOGETHER</div><h2>Have a label <span>in mind?</span></h2><p>Tell us about your brand and we'll help you choose the right labeling solution.</p><div className="contact-info-list" style={{ marginTop: '40px' }}><div style={{ marginBottom: '20px' }}><strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Phone</strong><a href="tel:+917940093225" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 79 4009 3225/26</a></div><div><strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</strong><a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a></div></div></View><View className="contact-card"><form className="contact-form" onSubmit={(e) => e.preventDefault()}><div className="form-group"><label>YOUR NAME</label><input type="text" placeholder="Enter your full name" required /></div><div className="form-group"><label>YOUR EMAIL ID</label><input type="email" placeholder="Enter your email address" required /></div><div className="form-group"><label>CONTACT NUMBER</label><input type="tel" placeholder="Enter your phone number" required /></div><button type="submit" className="btn btn-yellow">Request a call <ArrowRight size={18} /></button></form></View></div></section>
-    </main>
-    <footer className="site-footer"><div className="container footer-main"><div><img src="/PARSHV%20ENTERPRISE%20LOGO_page-0002.jpg" alt="Parshv Enterprise" className="footer-logo" /><p>Premium garment labels and accessories crafted with precision, quality and attention to detail.</p></div><div><div className="eyebrow"><span />EXPLORE</div><div className="footer-nav">{["Home", "About", "Products", "Quality", "Videos", "Contact"].map(item => <button onClick={() => scrollTo(item === "Products" ? "products" : item.toLowerCase())} key={item}>{item}</button>)}</div></div><div><h4>PARSHV LABELS PRIVATE LIMITED</h4><p>108 Pinnacle Business Park, Corporate Road, Prahladnagar, Ahmedabad 380015, Gujarat, India.</p><div className="socials"><a href="#" aria-label="Instagram"><Instagram size={18} /></a><a href="#" aria-label="Facebook"><Facebook size={18} /></a><a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a></div></div></div><div className="container copyright">© 2026 Parshv Labels Private Limited. All rights reserved.</div></footer>
+      <section id="home" className="hero"><div className="hero-orb" />
+        <div className="container hero-grid"><div className="hero-copy">
+          <div className="hero-text-wrapper"><AnimatePresence mode="wait">
+            <motion.div key={slide} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: .45 }}>
+              <div className="eyebrow"><span />{current.label}</div>
+              <h1>{current.title}</h1>
+              <p>{current.copy}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        <div className="hero-actions">
+          <button className="btn btn-dark" onClick={() => scrollTo("products")}>Explore Products <ArrowRight size={18} /></button>
+          <button className="btn btn-outline" onClick={() => scrollTo("contact")}>Talk to Us</button>
+        </div>
+      </div>
+      <div className="hero-visual" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+        <AnimatePresence mode="wait"><motion.img key={current.image} src={current.image} alt={`${current.label} garment label set`} initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .6 }} />
+        </AnimatePresence>
+        </div>
+      </div>
+      </section>
+    
+      <section id="about" className="about-section">
+      <div className="container about-grid">
+        <View>
+          <img className="about-image" src="/slide5.png" alt="Garment labeling collection" />
+        </View><View>
+          <div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div>
+          <h2>Small details. <span>Big brand impact.</span></h2>
+          <p>We partner with fashion brands and garment manufacturers to craft labels and accessories that look exceptional and perform reliably. Every order is guided by material expertise, manufacturing precision and respect for your brand.</p>
+          <div className="stats">
+            <div><Award size={28} className="stat-icon" /><strong>5+</strong><small>Years of expertise</small></div>
+            <div><Users size={28} className="stat-icon" /><strong>500+</strong><small>Brands served</small></div>
+            <div><CheckCircle size={28} className="stat-icon" /><strong>100%</strong><small>Quality focus</small></div>
+          </div>
+          <div className="about-cta-wrapper">
+            <button className="btn btn-dark" onClick={() => scrollTo("products")}>Discover our collection <ArrowRight size={18} /></button>
+          </div>
+        </View>
+      </div>
+      </section>
 
-    <a href="https://wa.me/917940093225" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
-  </div>;
+      <section className="team-section">
+      <div className="container">
+        <View className="section-intro">
+          <div className="eyebrow"><span />MANAGEMENT TEAM</div>
+          <h2>Guided by craft and <span>commitment.</span></h2>
+          <p>Our team combines product knowledge, production discipline and a shared focus on serving garment brands well.</p>
+        </View>
+        <div className="team-grid">{["Leadership", "Production", "Client Success"].map(role => <View key={role} className="team-card"><div className="team-avatar">PE</div><small>{role.toUpperCase()}</small><h3>Team member</h3><p>Profile and photograph coming soon.</p></View>)}</div>
+      </div>
+      </section>
+
+      <section id="products" className="products-section">
+        <div className="container">
+          <View className="section-intro light">
+            <div className="eyebrow"><span />OUR COLLECTION</div>
+            <h2>Labels made to <span>last.</span></h2>
+          </View>
+          <div className="product-grid">{products.map((product, index) => <View key={product.id} className="product-card">
+            <Link to={`/products/${product.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <div className="product-art"><img src={product.image} alt={product.name} />
+            </div>
+            <div className="product-info"><small>0{index + 1}</small>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </div></Link></View>)}
+        </div>
+      </div>
+      </section>
+
+      <section id="quality" className="quality-section">
+      <div className="container">
+        <View className="section-intro">
+          <div className="eyebrow"><span />OUR PROCESS</div>
+          <h2>Production with <span>purpose.</span></h2>
+          <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
+        </View>
+        <div className="process-grid"><View className="process-card">
+          <img src="/quality-image.png" alt="Garment label production process" />
+        <div>
+          <small>01 — PRODUCTION</small>
+          <h3>Made with precision</h3>
+          <p>Specialist manufacturing for clean detail and dependable finishes.</p>
+        </div>
+        </View>
+        <View className="process-card">
+          <img src="/image1.png" alt="Quality inspection of garment labels" />
+          <div>
+            <small>02 — QUALITY CHECK</small>
+            <h3>Inspected with care</h3>
+            <p>Every order is checked for clarity, alignment, colour and finish.</p>
+          </div>
+        </View>
+      </div>
+    </div>
+      </section>
+
+      <section id="videos" className="videos-section">
+        <div className="container">
+          <View className="section-intro light">
+            <div className="eyebrow"><span />BEHIND THE LABEL</div>
+            <h2>See our work <span>in motion.</span></h2>
+            <p>Video stories of our craft, process and product details will be added here.</p>
+          </View>
+          <div className="video-grid">{["Label production", "Quality inspection", "Product showcase"].map((title, index) => <View className="video-card" key={title}><div className="video-placeholder"><span>0{index + 1}</span>
+            <button aria-label={`Play ${title}`}><Play size={18} fill="currentColor" /></button></div>
+            <h3>{title}</h3>
+            <p>Video coming soon</p></View>)}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-section">
+        <div className="container contact-grid">
+          <View>
+            <div className="eyebrow"><span />LET'S WORK TOGETHER</div>
+            <h2>Have a label <span>in mind?</span></h2>
+            <p>Tell us about your brand and we'll help you choose the right labeling solution.</p>
+            <div className="contact-info-list" style={{ marginTop: '40px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Phone</strong>
+                <a href="tel:+917940093225" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 79 4009 3225/26</a></div>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</strong>
+                  <a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a></div>
+              </div>
+            </View>
+            <View className="contact-card">
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="form-group">
+                  <label>YOUR NAME</label>
+                  <input type="text" placeholder="Enter your full name" required />
+                </div>
+                <div className="form-group">
+                  <label>YOUR EMAIL ID</label>
+                  <input type="email" placeholder="Enter your email address" required />
+                </div>
+                <div className="form-group">
+                  <label>CONTACT NUMBER</label>
+                  <input type="tel" placeholder="Enter your phone number" required />
+                </div>
+                <button type="submit" className="btn btn-yellow">Request a call <ArrowRight size={18} /></button>
+              </form>
+            </View>
+          </div>
+      </section>
+    </main>
+  </>;
 }
 export default Home;
