@@ -6,6 +6,11 @@ export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
   const handleNav = (id) => {
+    if (id === "contact") {
+      navigate("/contact");
+      window.scrollTo(0, 0);
+      return;
+    }
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
     } else {

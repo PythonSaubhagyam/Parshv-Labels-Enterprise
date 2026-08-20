@@ -27,48 +27,48 @@ function Home() {
               <p>{current.copy}</p>
             </motion.div>
           </AnimatePresence>
+          </div>
+          <div className="hero-actions">
+            <button className="btn btn-dark" onClick={() => scrollTo("products")}>Explore Products <ArrowRight size={18} /></button>
+            <button className="btn btn-outline" onClick={() => scrollTo("contact")}>Talk to Us</button>
+          </div>
         </div>
-        <div className="hero-actions">
-          <button className="btn btn-dark" onClick={() => scrollTo("products")}>Explore Products <ArrowRight size={18} /></button>
-          <button className="btn btn-outline" onClick={() => scrollTo("contact")}>Talk to Us</button>
+          <div className="hero-visual" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+            <AnimatePresence mode="wait"><motion.img key={current.image} src={current.image} alt={`${current.label} garment label set`} initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .6 }} />
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
-      <div className="hero-visual" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-        <AnimatePresence mode="wait"><motion.img key={current.image} src={current.image} alt={`${current.label} garment label set`} initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .6 }} />
-        </AnimatePresence>
-        </div>
-      </div>
       </section>
-    
+
       <section id="about" className="about-section">
-      <div className="container about-grid">
-        <View>
-          <img className="about-image" src="/slide5.png" alt="Garment labeling collection" />
-        </View><View>
-          <div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div>
-          <h2>Small details. <span>Big brand impact.</span></h2>
-          <p>We partner with fashion brands and garment manufacturers to craft labels and accessories that look exceptional and perform reliably. Every order is guided by material expertise, manufacturing precision and respect for your brand.</p>
+        <div className="container about-grid">
+          <View>
+            <img className="about-image" src="/slide5.png" alt="Garment labeling collection" />
+          </View><View>
+            <div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div>
+            <h2>Small details. <span>Big brand impact.</span></h2>
+            <p>We partner with fashion brands and garment manufacturers to craft labels and accessories that look exceptional and perform reliably. Every order is guided by material expertise, manufacturing precision and respect for your brand.</p>
           <div className="stats">
             <div><Award size={28} className="stat-icon" /><strong>5+</strong><small>Years of expertise</small></div>
             <div><Users size={28} className="stat-icon" /><strong>500+</strong><small>Brands served</small></div>
             <div><CheckCircle size={28} className="stat-icon" /><strong>100%</strong><small>Quality focus</small></div>
           </div>
-          <div className="about-cta-wrapper">
-            <button className="btn btn-dark" onClick={() => scrollTo("products")}>Discover our collection <ArrowRight size={18} /></button>
-          </div>
-        </View>
-      </div>
+            <div className="about-cta-wrapper">
+              <button className="btn btn-dark" onClick={() => scrollTo("products")}>Discover our collection <ArrowRight size={18} /></button>
+            </div>
+          </View>
+        </div>
       </section>
 
       <section className="team-section">
-      <div className="container">
-        <View className="section-intro">
-          <div className="eyebrow"><span />MANAGEMENT TEAM</div>
-          <h2>Guided by craft and <span>commitment.</span></h2>
-          <p>Our team combines product knowledge, production discipline and a shared focus on serving garment brands well.</p>
-        </View>
-        <div className="team-grid">{["Leadership", "Production", "Client Success"].map(role => <View key={role} className="team-card"><div className="team-avatar">PE</div><small>{role.toUpperCase()}</small><h3>Team member</h3><p>Profile and photograph coming soon.</p></View>)}</div>
-      </div>
+        <div className="container">
+          <View className="section-intro">
+            <div className="eyebrow"><span />MANAGEMENT TEAM</div>
+            <h2>Guided by craft and <span>commitment.</span></h2>
+            <p>Our team combines product knowledge, production discipline and a shared focus on serving garment brands well.</p>
+          </View>
+          <div className="team-grid">{["Leadership", "Production", "Client Success"].map(role => <View key={role} className="team-card"><div className="team-avatar">PE</div><small>{role.toUpperCase()}</small><h3>Team member</h3><p>Profile and photograph coming soon.</p></View>)}</div>
+        </div>
       </section>
 
       <section id="products" className="products-section">
@@ -79,41 +79,41 @@ function Home() {
           </View>
           <div className="product-grid">{products.map((product, index) => <View key={product.id} className="product-card">
             <Link to={`/products/${product.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className="product-art"><img src={product.image} alt={product.name} />
-            </div>
-            <div className="product-info"><small>0{index + 1}</small>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-          </div></Link></View>)}
+              <div className="product-art"><img src={product.image} alt={product.name} />
+              </div>
+              <div className="product-info"><small>0{index + 1}</small>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+              </div></Link></View>)}
+          </div>
         </div>
-      </div>
       </section>
 
       <section id="quality" className="quality-section">
-      <div className="container">
-        <View className="section-intro">
-          <div className="eyebrow"><span />OUR PROCESS</div>
-          <h2>Production with <span>purpose.</span></h2>
-          <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
-        </View>
-        <div className="process-grid"><View className="process-card">
-          <img src="/quality-image.png" alt="Garment label production process" />
-        <div>
-          <small>01 — PRODUCTION</small>
-          <h3>Made with precision</h3>
-          <p>Specialist manufacturing for clean detail and dependable finishes.</p>
-        </div>
-        </View>
-        <View className="process-card">
-          <img src="/image1.png" alt="Quality inspection of garment labels" />
-          <div>
-            <small>02 — QUALITY CHECK</small>
-            <h3>Inspected with care</h3>
-            <p>Every order is checked for clarity, alignment, colour and finish.</p>
+        <div className="container">
+          <View className="section-intro">
+            <div className="eyebrow"><span />OUR PROCESS</div>
+            <h2>Production with <span>purpose.</span></h2>
+            <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
+          </View>
+          <div className="process-grid"><View className="process-card">
+            <img src="/quality-image.png" alt="Garment label production process" />
+            <div>
+              <small>01 — PRODUCTION</small>
+              <h3>Made with precision</h3>
+              <p>Specialist manufacturing for clean detail and dependable finishes.</p>
+            </div>
+          </View>
+            <View className="process-card">
+              <img src="/image1.png" alt="Quality inspection of garment labels" />
+              <div>
+                <small>02 — QUALITY CHECK</small>
+                <h3>Inspected with care</h3>
+                <p>Every order is checked for clarity, alignment, colour and finish.</p>
+              </div>
+            </View>
           </div>
-        </View>
-      </div>
-    </div>
+        </div>
       </section>
 
       <section id="videos" className="videos-section">
@@ -141,29 +141,29 @@ function Home() {
               <div style={{ marginBottom: '20px' }}>
                 <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Phone</strong>
                 <a href="tel:+917940093225" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 79 4009 3225/26</a></div>
-                <div>
-                  <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</strong>
-                  <a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a></div>
+              <div>
+                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</strong>
+                <a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a></div>
+            </div>
+          </View>
+          <View className="contact-card">
+            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group">
+                <label>YOUR NAME</label>
+                <input type="text" placeholder="Enter your full name" required />
               </div>
-            </View>
-            <View className="contact-card">
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="form-group">
-                  <label>YOUR NAME</label>
-                  <input type="text" placeholder="Enter your full name" required />
-                </div>
-                <div className="form-group">
-                  <label>YOUR EMAIL ID</label>
-                  <input type="email" placeholder="Enter your email address" required />
-                </div>
-                <div className="form-group">
-                  <label>CONTACT NUMBER</label>
-                  <input type="tel" placeholder="Enter your phone number" required />
-                </div>
-                <button type="submit" className="btn btn-yellow">Request a call <ArrowRight size={18} /></button>
-              </form>
-            </View>
-          </div>
+              <div className="form-group">
+                <label>YOUR EMAIL ID</label>
+                <input type="email" placeholder="Enter your email address" required />
+              </div>
+              <div className="form-group">
+                <label>CONTACT NUMBER</label>
+                <input type="tel" placeholder="Enter your phone number" required />
+              </div>
+              <button type="submit" className="btn btn-yellow">Request a call <ArrowRight size={18} /></button>
+            </form>
+          </View>
+        </div>
       </section>
     </main>
   </>;

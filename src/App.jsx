@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import Home from "./Home";
 import ProductDetail from "./ProductDetail";
 
+import Contact from "./Contact";
+
 function ScrollToHashElement() {
   const { hash } = useLocation();
   useEffect(() => {
@@ -31,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
         <a href="https://wa.me/917940093225" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
