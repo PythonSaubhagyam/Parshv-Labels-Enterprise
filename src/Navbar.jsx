@@ -12,6 +12,11 @@ export default function Navbar() {
   const handleNav = (id) => {
     setMenuOpen(false);
     setDropdownOpen(false);
+    if (id === "contact") {
+      navigate("/contact");
+      window.scrollTo(0, 0);
+      return;
+    }
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
     } else {
@@ -29,14 +34,14 @@ export default function Navbar() {
           {["Home", "About", "Products", "Quality", "Videos"].map(item => {
             if (item === "Products") {
               return (
-                <div 
-                  key={item} 
+                <div
+                  key={item}
                   className="nav-dropdown-container"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
-                  <button 
-                    className={location.pathname === "/" && item === "Home" ? "active" : ""} 
+                  <button
+                    className={location.pathname === "/" && item === "Home" ? "active" : ""}
                     onClick={() => handleNav("products")}
                   >
                     {item}
@@ -45,8 +50,8 @@ export default function Navbar() {
                     <div className="nav-dropdown">
                       <div className="nav-dropdown-scroll">
                         {products.map((product, index) => (
-                          <Link 
-                            key={product.id} 
+                          <Link
+                            key={product.id}
                             to={`/products/${product.slug}`}
                             className="dropdown-item"
                             onClick={() => { setDropdownOpen(false); setMenuOpen(false); }}
@@ -62,9 +67,9 @@ export default function Navbar() {
               );
             }
             return (
-              <button 
-                key={item} 
-                className={location.pathname === "/" && item === "Home" ? "active" : ""} 
+              <button
+                key={item}
+                className={location.pathname === "/" && item === "Home" ? "active" : ""}
                 onClick={() => handleNav(item.toLowerCase())}
               >
                 {item}
