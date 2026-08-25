@@ -1,13 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { products } from "./data/products";
+import "./ProductDetail.css";
 
 function ProductDetail() {
   const { slug } = useParams();
   const product = products.find(p => p.slug === slug);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [activeImage, setActiveImage] = useState(product ? (product.images?.[0] || product.image) : null);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isQuoteModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; }
+  }, [isQuoteModalOpen]);
+
+  // Auto open modal after 5 seconds
+  useEffect(() => {
+    setIsQuoteModalOpen(false); // Reset if it was open from previous product
+
+    const timer = setTimeout(() => {
+      setIsQuoteModalOpen(true);
+    }, 5000); // 5 seconds
+    
+    return () => clearTimeout(timer);
+  }, [slug]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -107,6 +131,47 @@ function ProductDetail() {
           </section>
         )}
       </div>
+
+      {/* Quote Popup Modal */}
+      <AnimatePresence>
+        {isQuoteModalOpen && (
+          <div className="quote-modal-overlay" onClick={() => setIsQuoteModalOpen(false)}>
+            <motion.div 
+              className="quote-modal"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <button className="quote-modal-close" onClick={() => setIsQuoteModalOpen(false)}>
+                <X size={24} />
+              </button>
+              
+              <div className="quote-modal-content">
+                <h2>Request a Quote</h2>
+                <p>Tell us what you need labelled and our team will get back to you within 24 hours.</p>
+                
+                <form className="quote-form" onSubmit={(e) => { e.preventDefault(); setIsQuoteModalOpen(false); }}>
+                  <div className="form-group">
+                    <label>YOUR NAME*</label>
+                    <input type="text" required placeholder="Enter your full name" />
+                  </div>
+                  <div className="form-group">
+                    <label>YOUR EMAIL ID*</label>
+                    <input type="email" required placeholder="Enter your email address" />
+                  </div>
+                  <div className="form-group">
+                    <label>CONTACT NUMBER*</label>
+                    <input type="tel" required placeholder="Enter your contact number" />
+                  </div>
+                  <button type="submit" className="submit-quote-btn">Get a Quote</button>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

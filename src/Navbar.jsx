@@ -17,6 +17,11 @@ export default function Navbar() {
       window.scrollTo(0, 0);
       return;
     }
+    if (id === "about") {
+      navigate("/about");
+      window.scrollTo(0, 0);
+      return;
+    }
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
     } else {
@@ -69,7 +74,11 @@ export default function Navbar() {
             return (
               <button
                 key={item}
-                className={location.pathname === "/" && item === "Home" ? "active" : ""}
+                className={
+                  (location.pathname === "/" && item === "Home") || 
+                  (location.pathname === "/about" && item === "About") 
+                  ? "active" : ""
+                }
                 onClick={() => handleNav(item.toLowerCase())}
               >
                 {item}
