@@ -37,9 +37,9 @@ export default function Footer() {
           <h4>PARSHV LABELS PRIVATE LIMITED</h4>
           <p>108 Pinnacle Business Park, Corporate Road, Prahladnagar, Ahmedabad 380015, Gujarat, India.</p>
           <div className="socials">
-            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+            <a href="https://www.instagram.com/parshv_enterprise_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a>
             <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+            <a href="https://www.linkedin.com/company/parshv-enterprise/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
           </div>
         </div>
       </div>
