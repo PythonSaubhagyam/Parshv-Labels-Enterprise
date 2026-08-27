@@ -105,7 +105,7 @@ function Home() {
             </div>
           </View>
             <View className="process-card">
-              <img src="/image1.png" alt="Quality inspection of garment labels" />
+              <img src="/fictional-labels.jpg" alt="Quality inspection of garment labels" />
               <div>
                 <small>02 — QUALITY CHECK</small>
                 <h3>Inspected with care</h3>
