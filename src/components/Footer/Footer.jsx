@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-main">
         <div>
-          <img src="/PARSHV%20ENTERPRISE%20LOGO_page-0002.jpg" alt="Parshv Enterprise" className="footer-logo" />
+          <img src="/images/parshv-enterprise-logo.jpg" alt="Parshv Enterprise" className="footer-logo" />
           <p>Premium garment labels and accessories crafted with precision, quality and attention to detail.</p>
         </div>
         <div>

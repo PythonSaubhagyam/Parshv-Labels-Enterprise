@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { products } from "./data/products";
+import { products } from "../../data/products";
 import "./ProductDetail.css";
 
 function ProductDetail() {

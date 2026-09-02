@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Home from "./Home";
-import About from "./About";
-import ProductDetail from "./ProductDetail";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
-import Contact from "./Contact";
+import Contact from "./pages/Contact/Contact";
 
 function ScrollToHashElement() {
   const { hash } = useLocation();
