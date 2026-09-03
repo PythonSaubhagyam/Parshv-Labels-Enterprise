@@ -13,8 +13,8 @@ export const products = [
       "Application": "Polished brand identity",
       "Durability": "Holds character through wash and wear"
     },
-    image: "/woven_labels_1786528160004.png",
-    images: ["/woven_labels_1786528160004.png", "/card-woven-new.png", "/material-damask.png", "/quality-image.png", "/slide2.png"]
+    image: "/images/Woven Labels 1.png",
+    images: ["/images/Woven Labels 1.png", "/images/Woven Labels 2.png", "/images/Woven Labels 3.png", "/images/Woven Labels 4.png", "/images/Woven Labels 5.png"]
   },
   {
     id: 2,
@@ -29,8 +29,8 @@ export const products = [
       "Finish": "Crisp, clean detail",
       "Application": "Care, size and brand information"
     },
-    image: "/woven_edge_satin_labels_1786528176502.png",
-    images: ["/woven_edge_satin_labels_1786528176502.png", "/slit_satin_labels_1786528192932.png", "/card-printed-new.png", "/material-satin.png", "/quality-image.png"]
+    image: "/images/Printed-Labels-1.png",
+    images: ["/images/Printed-Labels-1.png", "/images/Printed-Labels-2.png", "/images/Printed-Labels-3.png", "/images/Printed-Labels-4.png", "/images/Printed-Labels-5.png"]
   },
   {
     id: 3,
@@ -45,8 +45,8 @@ export const products = [
       "Material": "Natural cotton",
       "Available Options": "White and cream bases"
     },
-    image: "/cotton_white_base_1786528210489.png",
-    images: ["/cotton_white_base_1786528210489.png", "/cotton_cream_base_1786528225211.png", "/material-canvas.png", "/hero-bg-textile.png", "/quality-image.png"]
+    image: "/images/cotton_white_base_1786528210489.png",
+    images: ["/images/cotton_white_base_1786528210489.png", "/images/cotton_cream_base_1786528225211.png", "/images/material-canvas.png", "/images/hero-bg-textile.png", "/images/quality-image.png"]
   },
   {
     id: 4,
@@ -61,8 +61,8 @@ export const products = [
       "Finish": "Bold, premium presentation",
       "Application": "Garment branding and finishing touch"
     },
-    image: "/hang_tags_1786528240919.png",
-    images: ["/hang_tags_1786528240919.png", "/card-care.png", "/slide4.png", "/slide5.png", "/quality-image.png"]
+    image: "/images/hang_tags_1786528240919.png",
+    images: ["/images/hang_tags_1786528240919.png", "/images/card-care.png", "/images/slide4.png", "/images/slide5.png", "/images/quality-image.png"]
   },
   {
     id: 5,
@@ -77,8 +77,8 @@ export const products = [
       "Style": "Seamless, tagless",
       "Application": "Clean wearing experience"
     },
-    image: "/dtf_heat_transfer_1786528548667.png",
-    images: ["/dtf_heat_transfer_1786528548667.png", "/hd_heat_transfer_1786528579749.png", "/slide2.png", "/slide3.png", "/quality-image.png"]
+    image: "/images/dtf_heat_transfer_1786528548667.png",
+    images: ["/images/dtf_heat_transfer_1786528548667.png", "/images/hd_heat_transfer_1786528579749.png", "/images/slide2.png", "/images/slide3.png", "/images/quality-image.png"]
   },
   {
     id: 6,
@@ -93,8 +93,8 @@ export const products = [
       "Material": "Premium PU leather",
       "Finish": "Metallic foil stamping"
     },
-    image: "/pu_golden_foil_1786528598419.png",
-    images: ["/pu_golden_foil_1786528598419.png", "/pu_copper_foil_1786528736372.png", "/pu_silver_foil_1786528623916.png", "/material-leather.png", "/quality-image.png"]
+    image: "/images/pu_golden_foil_1786528598419.png",
+    images: ["/images/pu_golden_foil_1786528598419.png", "/images/pu_copper_foil_1786528736372.png", "/images/pu_silver_foil_1786528623916.png", "/images/material-leather.png", "/images/quality-image.png"]
   },
   {
     id: 7,
@@ -110,7 +110,7 @@ export const products = [
       "Finish": "Durable and elegant",
       "Application": "Fine garments, shirts, ethnic wear"
     },
-    image: "/polyester_buttons_1786528749593.png",
-    images: ["/polyester_buttons_1786528749593.png", "/slide5.png", "/slide2.png", "/slide4.png", "/quality-image.png"]
+    image: "/images/polyester_buttons_1786528749593.png",
+    images: ["/images/polyester_buttons_1786528749593.png", "/images/slide5.png", "/images/slide2.png", "/images/slide4.png", "/images/quality-image.png"]
   }
 ];

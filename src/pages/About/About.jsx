@@ -72,7 +72,7 @@ export default function About() {
             custom={0.3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} 
             className="who-we-are-visual"
           >
-            <img src="/premium_garment_labels.jpg" alt="Premium Garment Labels Manufacturing" />
+            <img src="/images/premium_garment_labels.jpg" alt="Premium Garment Labels Manufacturing" />
           </motion.div>
         </div>
       </section>
@@ -179,7 +179,7 @@ export default function About() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} 
             className="quality-focus-visual"
           >
-            <img src="/quality-image.png" alt="Quality Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <img src="/images/quality-image.png" alt="Quality Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
           </motion.div>
           
           <div className="quality-focus-content">

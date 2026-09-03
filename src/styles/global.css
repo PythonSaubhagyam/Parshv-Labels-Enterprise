@@ -224,7 +224,7 @@ h3 {
   overflow: hidden;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)),
-    url("/background.png");
+    url("/images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1819,7 +1819,7 @@ section:not(.hero) {
   width: 100%;
   height: 60vh;
   min-height: 450px;
-  background-image: url('/premium_garment_labels.jpg');
+  background-image: url('/images/premium_garment_labels.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

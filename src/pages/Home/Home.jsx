@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Facebook, Instagram, Linkedin, Menu, Play, X, Award, Users, CheckCircle } from "lucide-react";
-import { products } from "./data/products";
+import { products } from "../../data/products";
 
 const slides = [
-  { image: "/Shirt-Labels-Set.png", label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
-  { image: "/Denim-Labels-Set.png", label: "DENIM ESSENTIALS", title: <>Built for denim. Designed for <em>identity.</em></>, copy: "Durable woven labels, satin labels, garment tags and buttons that hold their character through every wash and wear." },
-  { image: "/Kurti-Labels-Set.png", label: "KURTI BRANDING", title: <>A signature finish for every <em>kurti.</em></>, copy: "From soft satin labels to premium hang tags and coordinated buttons, we create details that elevate contemporary ethnic wear." }
+  { image: "/images/Shirt-Labels-Set.png", label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
+  { image: "/images/Denim-Labels-Set.png", label: "DENIM ESSENTIALS", title: <>Built for denim. Designed for <em>identity.</em></>, copy: "Durable woven labels, satin labels, garment tags and buttons that hold their character through every wash and wear." },
+  { image: "/images/Kurti-Labels-Set.png", label: "KURTI BRANDING", title: <>A signature finish for every <em>kurti.</em></>, copy: "From soft satin labels to premium hang tags and coordinated buttons, we create details that elevate contemporary ethnic wear." }
 ];
 const reveal = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.65 } } };
 const View = ({ children, className = "" }) => <motion.div className={className} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>{children}</motion.div>;
@@ -15,7 +15,7 @@ const View = ({ children, className = "" }) => <motion.div className={className}
 function Home() {
   const [slide, setSlide] = useState(0); const [paused, setPaused] = useState(false); const current = slides[slide];
   const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
-  useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 5000); return () => clearInterval(timer); }, [paused]);
+  useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 4000); return () => clearInterval(timer); }, [paused]);/*hero section speed for set 3 */
   return <>
     <main>
       <section id="home" className="hero"><div className="hero-orb" />
@@ -43,7 +43,7 @@ function Home() {
       <section id="about" className="about-section">
         <div className="container about-grid">
           <View>
-            <img className="about-image" src="/small-labels-clubbed-image.png" alt="Garment labeling collection" />
+            <img className="about-image" src="/images/small-labels-clubbed-image.png" alt="Garment labeling collection" />
           </View><View>
             <div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div>
             <h2>Small details. <span>Big brand impact.</span></h2>
@@ -97,7 +97,7 @@ function Home() {
             <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
           </View>
           <div className="process-grid"><View className="process-card">
-            <img src="/quality-image.png" alt="Garment label production process" />
+            <img src="/images/quality-image.png" alt="Garment label production process" />
             <div>
               <small>01 — PRODUCTION</small>
               <h3>Made with precision</h3>
@@ -105,7 +105,7 @@ function Home() {
             </div>
           </View>
             <View className="process-card">
-              <img src="/fictional-labels.jpg" alt="Quality inspection of garment labels" />
+              <img src="/images/fictional-labels.jpg" alt="Quality inspection of garment labels" />
               <div>
                 <small>02 — QUALITY CHECK</small>
                 <h3>Inspected with care</h3>

@@ -52,7 +52,7 @@
 
 .site .hero {
     min-height: 690px;
-    background: linear-gradient(#ffffffd9, #ffffffd9), url('/background.png') center/cover
+    background: linear-gradient(#ffffffd9, #ffffffd9), url('/images/background.png') center/cover
 }
 
 .hero-orb {
@@ -92,13 +92,13 @@
 }
 
 .site .hero-visual {
-    height: 460px
+    height: auto;
 }
 
 .site .hero-visual img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 12px;
     box-shadow: 0 26px 50px #0000001c
 }
@@ -125,7 +125,8 @@
 
 .about-image {
     width: 100%;
-    height: 490px;
+    height: 545px;
+    /* aspect-ratio: 4/3; */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 24px 45px #0002
@@ -238,7 +239,8 @@
 
 .site .product-grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 18px !important
+    gap: 18px !important;
+    align-items: start !important;
 }
 
 .site .product-card {
@@ -254,16 +256,15 @@
 }
 
 .site .product-art {
-    aspect-ratio: 1 / 1 !important;
     height: auto !important;
     overflow: hidden;
 }
 
 .site .product-art img {
     width: 100%;
-    height: 100%;
-    object-fit: cover !important;
+    height: auto !important;
     object-position: center;
+    display: block;
 }
 
 .product-overlay {
@@ -317,8 +318,8 @@
 .process-card img {
     display: block;
     width: 100%;
-    height: 340px;
-    object-fit: cover
+    aspect-ratio: 4/3;
+    object-fit: cover;
 }
 
 .process-card>div {
@@ -397,7 +398,7 @@
     }
 
     .site .hero-visual {
-        height: 380px
+        height: auto
     }
 
     .site .product-grid {
@@ -439,7 +440,7 @@
     }
 
     .site .hero-visual {
-        height: 330px;
+        height: auto;
         grid-row: 1
     }
 
@@ -457,7 +458,7 @@
     }
 
     .about-image {
-        height: 330px
+        height: auto
     }
 
     .team-grid,
@@ -472,7 +473,7 @@
 
 
     .process-card img {
-        height: 270px
+        aspect-ratio: 4/3;
     }
 
     .footer-main {
@@ -501,7 +502,7 @@
     }
 
     .site .hero-visual {
-        height: 270px
+        height: auto
     }
 }
 

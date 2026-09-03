@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { products } from "./data/products";
+import { products } from "../../data/products";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-inner">
         <button className="brand" onClick={() => handleNav("home")} aria-label="Go to home">
-          <img src="/PARSHV%20ENTERPRISE%20LOGO_page-0002.jpg" alt="Parshv Enterprise" className="brand-logo" />
+          <img src="/images/parshv-enterprise-logo.jpg" alt="Parshv Enterprise" className="brand-logo" />
         </button>
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
           {["Home", "About", "Products", "Quality", "Videos"].map(item => {
