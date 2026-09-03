@@ -15,7 +15,7 @@ const View = ({ children, className = "" }) => <motion.div className={className}
 function Home() {
   const [slide, setSlide] = useState(0); const [paused, setPaused] = useState(false); const current = slides[slide];
   const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
-  useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 5000); return () => clearInterval(timer); }, [paused]);
+  useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 4000); return () => clearInterval(timer); }, [paused]);/*hero section speed for set 3 */
   return <>
     <main>
       <section id="home" className="hero"><div className="hero-orb" />

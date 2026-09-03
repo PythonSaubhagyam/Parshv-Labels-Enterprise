@@ -29,8 +29,8 @@ export const products = [
       "Finish": "Crisp, clean detail",
       "Application": "Care, size and brand information"
     },
-    image: "/images/woven_edge_satin_labels_1786528176502.png",
-    images: ["/images/woven_edge_satin_labels_1786528176502.png", "/images/slit_satin_labels_1786528192932.png", "/images/card-printed-new.png", "/images/material-satin.png", "/images/quality-image.png"]
+    image: "/images/Printed-Labels-1.png",
+    images: ["/images/Printed-Labels-1.png", "/images/Printed-Labels-2.png", "/images/Printed-Labels-3.png", "/images/Printed-Labels-4.png", "/images/Printed-Labels-5.png"]
   },
   {
     id: 3,
