@@ -45,8 +45,8 @@ export const products = [
       "Material": "Natural cotton",
       "Available Options": "White and cream bases"
     },
-    image: "/images/cotton_white_base_1786528210489.png",
-    images: ["/images/cotton_white_base_1786528210489.png", "/images/cotton_cream_base_1786528225211.png", "/images/material-canvas.png", "/images/hero-bg-textile.png", "/images/quality-image.png"]
+    image: "/images/Cotton Labels-1.png",
+    images: ["/images/Cotton Labels-1.png", "/images/Cotton Labels-2.png", "/images/Cotton Labels-3.png", "/images/Cotton Labels-4.png", "/images/Cotton Labels-5.png"]
   },
   {
     id: 4,
