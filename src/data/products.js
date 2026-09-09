@@ -61,8 +61,8 @@ export const products = [
       "Finish": "Bold, premium presentation",
       "Application": "Garment branding and finishing touch"
     },
-    image: "/images/hang_tags_1786528240919.png",
-    images: ["/images/hang_tags_1786528240919.png", "/images/card-care.png", "/images/slide4.png", "/images/slide5.png", "/images/quality-image.png"]
+    image: "/images/Hangtag-1.png",
+    images: ["/images/Hangtag-1.png", "/images/Hangtag-2.png", "/images/Hangtag-3.png", "/images/Hangtag-4.png", "/images/Hangtag-5.png"]
   },
   {
     id: 5,
