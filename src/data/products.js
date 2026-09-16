@@ -77,8 +77,8 @@ export const products = [
       "Style": "Seamless, tagless",
       "Application": "Clean wearing experience"
     },
-    image: "/images/dtf_heat_transfer_1786528548667.png",
-    images: ["/images/dtf_heat_transfer_1786528548667.png", "/images/hd_heat_transfer_1786528579749.png", "/images/slide2.png", "/images/slide3.png", "/images/quality-image.png"]
+    image: "/images/Heat-Transfer-Label-1.png",
+    images: ["/images/Heat-Transfer-Label-1.png", "/images/Heat-Transfer-Label-2.png", "/images/Heat-Transfer-Label-3.png", "/images/Heat-Transfer-Label-4.png", "/images/Heat-Transfer-Label-5.png"]
   },
   {
     id: 6,
@@ -93,8 +93,8 @@ export const products = [
       "Material": "Premium PU leather",
       "Finish": "Metallic foil stamping"
     },
-    image: "/images/pu_golden_foil_1786528598419.png",
-    images: ["/images/pu_golden_foil_1786528598419.png", "/images/pu_copper_foil_1786528736372.png", "/images/pu_silver_foil_1786528623916.png", "/images/material-leather.png", "/images/quality-image.png"]
+    image: "/images/PU-Label-1.png",
+    images: ["/images/PU-Label-1.png", "/images/PU-Label-2.png", "/images/PU-Label-3.png", "/images/PU-Label-4.png", "/images/PU-Label-5.png"]
   },
   {
     id: 7,
@@ -110,7 +110,7 @@ export const products = [
       "Finish": "Durable and elegant",
       "Application": "Fine garments, shirts, ethnic wear"
     },
-    image: "/images/polyester_buttons_1786528749593.png",
-    images: ["/images/polyester_buttons_1786528749593.png", "/images/slide5.png", "/images/slide2.png", "/images/slide4.png", "/images/quality-image.png"]
+    image: "/images/Polyester-buttons-1.png",
+    images: ["/images/Polyester-buttons-1.png", "/images/Polyester-buttons-2.png", "/images/Polyester-buttons-3.png", "/images/Polyester-buttons-4.png", "/images/Polyester-buttons-5.png"]
   }
 ];
