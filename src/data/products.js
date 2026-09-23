@@ -112,5 +112,27 @@ export const products = [
     },
     image: "/images/Polyester-buttons-1.png",
     images: ["/images/Polyester-buttons-1.png", "/images/Polyester-buttons-2.png", "/images/Polyester-buttons-3.png", "/images/Polyester-buttons-4.png", "/images/Polyester-buttons-5.png"]
+  },
+  {
+    id: 8,
+    name: "Scodix Label",
+    slug: "scodix-label",
+    category: "SCODIX LABELS",
+    description: "Premium Scodix labels with exceptional finish.",
+    shortDescription: "Premium Scodix labels with exceptional finish.",
+    buttonText: "Get a Quote",
+    longDescription: "Our Scodix labels offer a premium, textured finish that elevates your brand identity. Perfect for luxury garments and specialized apparel.",
+    features: {
+      "Finish": "Textured, premium",
+      "Application": "Luxury garments and specialized apparel"
+    },
+    image: "/images/scodix_garment_label.jpg",
+    images: [
+      "/images/scodix_garment_label.jpg",
+      "/images/scodix_garment_label_2.jpg",
+      "/images/scodix_garment_label_3.jpg",
+      "/images/scodix_garment_label_4.jpg",
+      "/images/scodix_garment_label_5.jpg"
+    ]
   }
 ];
