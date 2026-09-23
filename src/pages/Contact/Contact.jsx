@@ -50,7 +50,7 @@ export default function Contact() {
                   <div className="panel-info-icon"><MapPin size={20} /></div>
                   <div className="panel-info-text">
                     <h4>Location</h4>
-                    <p>19, Kameshwar Estate, Opp. Ashish Estate, Odhav, Ahmedabad, Gujarat 382415, India.</p>
+                    <p>108 Pinnacle Business Park , Corporate Road, Prahladnagar Ahmedabad 380015, Gujarat, India.</p>
                   </div>
                 </div>
 

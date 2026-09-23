@@ -51,7 +51,11 @@
 }
 
 .site .hero {
-    min-height: 690px;
+    min-height: calc(100vh - 92px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     background: linear-gradient(#ffffffd9, #ffffffd9), url('/images/background.png') center/cover
 }
 
@@ -67,9 +71,9 @@
 }
 
 .hero-grid {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 42% 58%;
     gap: 34px;
-    padding: 72px 0
+    padding: 20px 0;
 }
 
 .site .hero h1 {
@@ -98,6 +102,8 @@
 .site .hero-visual img {
     width: 100%;
     height: auto;
+    max-height: 70vh;
+    object-fit: contain;
     display: block;
     border-radius: 12px;
     box-shadow: 0 26px 50px #0000001c
