@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Facebook, Instagram, Linkedin, Menu, Play, X, Award, Users, CheckCircle } from "lucide-react";
 import { products } from "../../data/products";
+import heroImage from "../../assets/images/Shirt-Labels-Set.png";
+import denimImage from "../../assets/images/Denim-Labels-Set.png";
+import kurtiImage from "../../assets/images/Kurti-Labels-Set.png";
 
 const slides = [
-  { image: "/images/Shirt-Labels-Set.png", label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
-  { image: "/images/Denim-Labels-Set.png", label: "DENIM ESSENTIALS", title: <>Built for denim. Designed for <em>identity.</em></>, copy: "Durable woven labels, satin labels, garment tags and buttons that hold their character through every wash and wear." },
-  { image: "/images/Kurti-Labels-Set.png", label: "KURTI BRANDING", title: <>A signature finish for every <em>kurti.</em></>, copy: "From soft satin labels to premium hang tags and coordinated buttons, we create details that elevate contemporary ethnic wear." }
+  { image: heroImage, label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
+  { image: denimImage, label: "DENIM ESSENTIALS", title: <>Built for denim. Designed for <em>identity.</em></>, copy: "Durable woven labels, satin labels, garment tags and buttons that hold their character through every wash and wear." },
+  { image: kurtiImage, label: "KURTI BRANDING", title: <>A signature finish for every <em>kurti.</em></>, copy: "From soft satin labels to premium hang tags and coordinated buttons, we create details that elevate contemporary ethnic wear." }
 ];
 const reveal = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.65 } } };
 const View = ({ children, className = "" }) => <motion.div className={className} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>{children}</motion.div>;
