@@ -36,9 +36,9 @@ function ProductDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (product) {
-      // Pick 4 related products (excluding current)
+      // Pick all other products (excluding current)
       const others = products.filter(p => p.slug !== slug);
-      setRelatedProducts(others.slice(0, 4));
+      setRelatedProducts(others);
       // Reset active image when product changes
       setActiveImage(product.images?.[0] || product.image);
     }
@@ -112,21 +112,23 @@ function ProductDetail() {
           <section className="related-products-section">
             <div className="eyebrow"><span />MORE OPTIONS</div>
             <h2>Related Products</h2>
-            <div className="product-grid">
-              {relatedProducts.map((rp, index) => (
-                <div key={rp.id} className="product-card" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <Link to={`/products/${rp.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-                    <div className="product-art">
-                      <img src={rp.image} alt={rp.name} />
-                    </div>
-                    <div className="product-info">
-                      <small>0{rp.id}</small>
-                      <h3>{rp.name}</h3>
-                      <p>{rp.description}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+            <div className="product-grid auto-scroll">
+              <div className="scroll-track">
+                {[...relatedProducts, ...relatedProducts].map((rp, index) => (
+                  <div key={`${rp.id}-${index}`} className="product-card" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <Link to={`/products/${rp.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                      <div className="product-art">
+                        <img src={rp.image} alt={rp.name} />
+                      </div>
+                      <div className="product-info">
+                        <small>0{rp.id}</small>
+                        <h3>{rp.name}</h3>
+                        <p>{rp.description}</p>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}

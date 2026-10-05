@@ -9,7 +9,7 @@ export const products = [
     buttonText: "Get a Quote",
     longDescription: "Our woven labels are crafted with precision to give your garments a refined, recognisable finish. Designed to hold their character through every wash and wear, they are perfect for tailored shirts, denim, and contemporary ethnic wear.",
     features: {
-      "Finish": "Sharp, premium",
+      "Finish": "Sharp, premium, Soft",
       "Application": "Polished brand identity",
       "Durability": "Holds character through wash and wear"
     },
@@ -98,7 +98,7 @@ export const products = [
   },
   {
     id: 7,
-    name: "Polyester Buttons",
+    name: "Buttons",
     slug: "polyester-buttons",
     category: "POLYESTER BUTTONS",
     description: "Durable and elegant buttons for fine garments.",
@@ -106,7 +106,7 @@ export const products = [
     buttonText: "Get a Quote",
     longDescription: "Add a coordinated, refined detail to your apparel with our polyester buttons. Durable and elegant, they provide a signature finish for tailored shirts and contemporary ethnic wear.",
     features: {
-      "Material": "Polyester",
+      "Material": "Metal",
       "Finish": "Durable and elegant",
       "Application": "Fine garments, shirts, ethnic wear"
     },

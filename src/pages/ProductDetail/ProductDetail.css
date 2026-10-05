@@ -124,6 +124,33 @@
   opacity: 0.9;
 }
 
+.related-products-section .product-grid.auto-scroll {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 9px)); }
+}
+
+.related-products-section .product-card {
+  flex: 0 0 280px; /* Fixed width for horizontal scrolling */
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .quote-modal {
