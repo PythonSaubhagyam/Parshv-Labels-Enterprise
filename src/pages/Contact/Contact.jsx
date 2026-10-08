@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Phone, MapPin, Mail, Globe, User, Tag, MessageSquare, Send, Lock, Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Contact() {
@@ -8,15 +9,49 @@ export default function Contact() {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
-    alert("Thank you for your message. We will respond within 24 hours.");
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    try {
+      await emailjs.send(
+        "service_ykkfmjl",
+        "template_mi7yvzo",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "g0En59tujVOlhnIkY"
+      );
+
+      setSuccessMessage("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setErrorMessage("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,7 +93,7 @@ export default function Contact() {
                   <div className="panel-info-icon"><Phone size={20} /></div>
                   <div className="panel-info-text">
                     <h4>Phone</h4>
-                    <p>+91 79 4009 3225 / 26<br />+91 94084 78601</p>
+                    <p>+91 79 4009 3225</p>
                   </div>
                 </div>
 
@@ -146,9 +181,22 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <button type="submit" className="btn-modern-submit">
-                  SEND MESSAGE <Send size={16} />
+                <button type="submit" className="btn-modern-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "SENDING..." : (
+                    <>SEND MESSAGE <Send size={16} /></>
+                  )}
                 </button>
+
+                {successMessage && (
+                  <div className="form-success-message" style={{ color: "#28a745", marginTop: "15px", fontSize: "0.9rem", fontWeight: "500", textAlign: "center" }}>
+                    {successMessage}
+                  </div>
+                )}
+                {errorMessage && (
+                  <div className="form-error-message" style={{ color: "#dc3545", marginTop: "15px", fontSize: "0.9rem", fontWeight: "500", textAlign: "center" }}>
+                    {errorMessage}
+                  </div>
+                )}
 
                 <div className="privacy-text" style={{ marginTop: '15px' }}>
                   <Lock size={14} className="privacy-icon" />
