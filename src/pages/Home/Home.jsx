@@ -100,7 +100,7 @@ function Home() {
             <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
           </View>
           <div className="process-grid"><View className="process-card">
-            <img src="/images/quality-image.png" alt="Garment label production process" />
+            <img src="/images/Process making Woven Label.png" alt="Garment label production process" />
             <div>
               <small>01 — PRODUCTION</small>
               <h3>Made with precision</h3>
@@ -108,7 +108,7 @@ function Home() {
             </div>
           </View>
             <View className="process-card">
-              <img src="/images/fictional-labels.jpg" alt="Quality inspection of garment labels" />
+              <img src="/images/Process-making-Printed-Label.png" alt="Quality inspection of garment labels" />
               <div>
                 <small>02 — QUALITY CHECK</small>
                 <h3>Inspected with care</h3>
