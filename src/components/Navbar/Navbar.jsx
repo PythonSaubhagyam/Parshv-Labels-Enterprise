@@ -33,7 +33,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-inner">
         <button className="brand" onClick={() => handleNav("home")} aria-label="Go to home">
-          <img src="/images/parshv-enterprise-logo.svg" alt="Parshv Enterprise" className="brand-logo" />
+          <img src="/images/parshv-enterprise-logo-1.jpg" alt="Parshv Enterprise" className="brand-logo" />
         </button>
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
           {["Home", "About", "Products", "Quality", "Videos"].map(item => {

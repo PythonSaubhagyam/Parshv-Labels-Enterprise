@@ -60,20 +60,13 @@
 }
 
 .hero-orb {
-    position: absolute;
-    width: 620px;
-    height: 620px;
-    border-radius: 50%;
-    right: -130px;
-    top: -165px;
-    border: 1px solid #e7e4d6;
-    box-shadow: 0 0 0 80px #f6c4000e, 0 0 0 160px #f6c40009
+    display: none;
 }
 
 .hero-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 34px;
-    padding: 20px 0;
+    gap: clamp(30px, 5vw, 60px);
+    padding: clamp(30px, 5vw, 60px) 0;
 }
 
 .site .hero h1 {
@@ -100,15 +93,10 @@
 }
 
 .site .hero-visual img {
-    width: auto;
+    width: 100%;
     height: auto;
-    max-width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
     display: block;
     margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 26px 50px #0000001c
 }
 
 .site .slide-indicators {
@@ -121,23 +109,22 @@
 .site .contact-section,
 .site .products-section,
 .site .videos-section {
-    padding: 110px 0 !important
+    padding: clamp(50px, 8vh, 90px) 0 !important
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 86px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(40px, 6vw, 86px);
     align-items: center
 }
 
 .about-image {
     width: 100%;
-    height: 545px;
-    /* aspect-ratio: 4/3; */
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 10px;
-    box-shadow: 0 24px 45px #0002
+    box-shadow: 0 24px 45px #0002;
 }
 
 .site h2 {
@@ -456,14 +443,7 @@
         grid-row: 2
     }
 
-    .site .about-section,
-    .site .team-section,
-    .site .products-section,
-    .site .quality-section,
-    .site .videos-section,
-    .site .contact-section {
-        padding: 70px 0 !important
-    }
+    /* padding overrides removed to rely on clamp */
 
     .about-image {
         height: auto
