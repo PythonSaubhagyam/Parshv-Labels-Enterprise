@@ -104,9 +104,9 @@ export const products = [
     description: "Durable and elegant buttons for fine garments.",
     shortDescription: "Durable and elegant buttons for fine garments.",
     buttonText: "Get a Quote",
-    longDescription: "Add a coordinated, refined detail to your apparel with our polyester buttons. Durable and elegant, they provide a signature finish for tailored shirts and contemporary ethnic wear.",
+    longDescription: "Add a coordinated, refined detail to your apparel with our polyester and metal buttons. Durable and elegant, they provide a signature finish for tailored shirts and contemporary ethnic wear.",
     features: {
-      "Material": "Metal",
+      "Material": "Polyester & Metal",
       "Finish": "Durable and elegant",
       "Application": "Fine garments, shirts, ethnic wear"
     },

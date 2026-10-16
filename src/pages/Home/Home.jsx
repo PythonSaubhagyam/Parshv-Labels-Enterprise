@@ -142,11 +142,16 @@ function Home() {
             <p>Tell us about your brand and we'll help you choose the right labeling solution.</p>
             <div className="contact-info-list" style={{ marginTop: '40px' }}>
               <div style={{ marginBottom: '20px' }}>
-                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Phone</strong>
-                <a href="tel:+917940093225" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 79 4009 3225/26</a></div>
+                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Phone</strong>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <a href="tel:+917940093225" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 79 4009 3225/26</a>
+                  <a href="tel:+917041500922" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>+91 70415 00922</a>
+                </div>
+              </div>
               <div>
-                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</strong>
-                <a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a></div>
+                <strong style={{ display: 'block', fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Email</strong>
+                <a href="mailto:sales@parshvlabels.com" style={{ fontSize: '18px', color: 'inherit', textDecoration: 'none', fontWeight: '500' }}>sales@parshvlabels.com</a>
+              </div>
             </div>
           </View>
           <View className="contact-card">
