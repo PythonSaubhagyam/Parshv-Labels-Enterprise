@@ -93,7 +93,8 @@ export default function Contact() {
                   <div className="panel-info-icon"><Phone size={20} /></div>
                   <div className="panel-info-text">
                     <h4>Phone</h4>
-                    <p>+91 79 4009 3225</p>
+                    <p><a href="tel:+917940093225" style={{ color: "inherit", textDecoration: "none" }}>+91 79 4009 3225/26</a></p>
+                    <p><a href="tel:+917041500922" style={{ color: "inherit", textDecoration: "none" }}>+91 70415 00922</a></p>
                   </div>
                 </div>
 
