@@ -39,8 +39,8 @@ ${formData.message}
 
     try {
       await emailjs.send(
-        "service_hr1zavb",
-        "template_7747kav",
+        "service_ykkfmjl",
+        "template_mi7yvzo",
         {
           name: formData.name,
           from_name: formData.name,
@@ -53,7 +53,7 @@ ${formData.message}
           user_message: formData.message,
           message: formattedMessage,
         },
-        "YQOYwCDYGjkk3k22p"
+        "g0En59tujVOlhnIkY"
       );
 
       setSuccessMessage("Message sent successfully!");

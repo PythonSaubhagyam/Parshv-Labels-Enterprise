@@ -39,8 +39,8 @@ function Home() {
 
     try {
       await emailjs.send(
-        "service_hr1zavb",
-        "template_7747kav",
+        "service_ykkfmjl",
+        "template_mi7yvzo",
         {
           from_name: callForm.name,
           name: callForm.name,
@@ -55,7 +55,7 @@ function Home() {
           message: `New "Request a Call" inquiry from your website:\n\n• Name: ${callForm.name}\n• Email: ${callForm.email}\n• Contact Number: ${callForm.phone}\n• Requested at: ${new Date().toLocaleString()}`,
           to_email: "sales@parshvlabels.com",
         },
-        "YQOYwCDYGjkk3k22p"
+        "g0En59tujVOlhnIkY"
       );
 
       setCallSuccess("Thank you! Your call request has been sent to our sales team. We will call you shortly.");
