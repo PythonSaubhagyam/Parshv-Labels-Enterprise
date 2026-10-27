@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h4>PARSHV LABELS PRIVATE LIMITED</h4>
+          <h4>PARSHV ENTERPRISE</h4>
           <p>108 Pinnacle Business Park, Corporate Road, Prahladnagar, Ahmedabad 380015, Gujarat, India.</p>
           <div className="socials">
             <a href="https://www.instagram.com/parshv_enterprise_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a>
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container copyright">© 2026 Parshv Labels Private Limited. All rights reserved.</div>
+      <div className="container copyright">© 2026 Parshv Enterprise. All rights reserved.</div>
     </footer>
   );
 }

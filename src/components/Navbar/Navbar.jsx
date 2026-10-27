@@ -47,9 +47,16 @@ export default function Navbar() {
                 >
                   <button
                     className={location.pathname === "/" && item === "Home" ? "active" : ""}
-                    onClick={() => handleNav("products")}
+                    onClick={(e) => {
+                      if (menuOpen) {
+                        e.stopPropagation();
+                        setDropdownOpen(!dropdownOpen);
+                      } else {
+                        handleNav("products");
+                      }
+                    }}
                   >
-                    {item}
+                    {item} {menuOpen && <span style={{ fontSize: '10px', marginLeft: '6px', opacity: 0.7 }}>{dropdownOpen ? '▲' : '▼'}</span>}
                   </button>
                   {dropdownOpen && (
                     <div className="nav-dropdown">
