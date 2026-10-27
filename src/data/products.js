@@ -13,8 +13,8 @@ export const products = [
       "Application": "Polished brand identity",
       "Durability": "Holds character through wash and wear"
     },
-    image: "/images/Woven Labels 1.png",
-    images: ["/images/Woven Labels 1.png", "/images/Woven Labels 2.png", "/images/Woven Labels 3.png", "/images/Woven Labels 4.png", "/images/Woven Labels 5.png"]
+    image: "/images/Woven Labels 1.webp",
+    images: ["/images/Woven Labels 1.webp", "/images/Woven Labels 2.webp", "/images/Woven Labels 3.webp", "/images/Woven Labels 4.webp", "/images/Woven Labels 5.webp"]
   },
   {
     id: 2,
@@ -29,8 +29,8 @@ export const products = [
       "Finish": "Crisp, clean detail",
       "Application": "Care, size and brand information"
     },
-    image: "/images/Printed-Labels-1.png",
-    images: ["/images/Printed-Labels-1.png", "/images/Printed-Labels-2.png", "/images/Printed-Labels-3.png", "/images/Printed-Labels-4.png", "/images/Printed-Labels-5.png"]
+    image: "/images/Printed-Labels-1.webp",
+    images: ["/images/Printed-Labels-1.webp", "/images/Printed-Labels-2.webp", "/images/Printed-Labels-3.webp", "/images/Printed-Labels-4.webp", "/images/Printed-Labels-5.webp"]
   },
   {
     id: 3,
@@ -45,8 +45,8 @@ export const products = [
       "Material": "Natural cotton",
       "Available Options": "White and cream bases"
     },
-    image: "/images/Cotton Labels-1.png",
-    images: ["/images/Cotton Labels-1.png", "/images/Cotton Labels-2.png", "/images/Cotton Labels-3.png", "/images/Cotton Labels-4.png", "/images/Cotton Labels-5.png"]
+    image: "/images/Cotton Labels-1.webp",
+    images: ["/images/Cotton Labels-1.webp", "/images/Cotton Labels-2.webp", "/images/Cotton Labels-3.webp", "/images/Cotton Labels-4.webp", "/images/Cotton Labels-5.webp"]
   },
   {
     id: 4,
@@ -61,8 +61,8 @@ export const products = [
       "Finish": "Bold, premium presentation",
       "Application": "Garment branding and finishing touch"
     },
-    image: "/images/Hangtag-1.png",
-    images: ["/images/Hangtag-1.png", "/images/Hangtag-2.png", "/images/Hangtag-3.png", "/images/Hangtag-4.png", "/images/Hangtag-5.png"]
+    image: "/images/Hangtag-1.webp",
+    images: ["/images/Hangtag-1.webp", "/images/Hangtag-2.webp", "/images/Hangtag-3.webp", "/images/Hangtag-4.webp", "/images/Hangtag-5.webp"]
   },
   {
     id: 5,
@@ -77,8 +77,8 @@ export const products = [
       "Style": "Seamless, tagless",
       "Application": "Clean wearing experience"
     },
-    image: "/images/Heat-Transfer-Label-1.png",
-    images: ["/images/Heat-Transfer-Label-1.png", "/images/Heat-Transfer-Label-2.png", "/images/Heat-Transfer-Label-3.png", "/images/Heat-Transfer-Label-4.png", "/images/Heat-Transfer-Label-5.png"]
+    image: "/images/Heat-Transfer-Label-1.webp",
+    images: ["/images/Heat-Transfer-Label-1.webp", "/images/Heat-Transfer-Label-2.webp", "/images/Heat-Transfer-Label-3.webp", "/images/Heat-Transfer-Label-4.webp", "/images/Heat-Transfer-Label-5.webp"]
   },
   {
     id: 6,
@@ -93,8 +93,8 @@ export const products = [
       "Material": "Premium PU leather",
       "Finish": "Metallic foil stamping"
     },
-    image: "/images/PU-Label-1.png",
-    images: ["/images/PU-Label-1.png", "/images/PU-Label-2.png", "/images/PU-Label-3.png", "/images/PU-Label-4.png", "/images/PU-Label-5.png"]
+    image: "/images/PU-Label-1.webp",
+    images: ["/images/PU-Label-1.webp", "/images/PU-Label-2.webp", "/images/PU-Label-3.webp", "/images/PU-Label-4.webp", "/images/PU-Label-5.webp"]
   },
   {
     id: 7,
@@ -110,8 +110,8 @@ export const products = [
       "Finish": "Durable and elegant",
       "Application": "Fine garments, shirts, ethnic wear"
     },
-    image: "/images/Polyester-buttons-1.png",
-    images: ["/images/Polyester-buttons-1.png", "/images/Polyester-buttons-2.png", "/images/Polyester-buttons-3.png", "/images/Polyester-buttons-4.png", "/images/Polyester-buttons-5.png"]
+    image: "/images/Polyester-buttons-1.webp",
+    images: ["/images/Polyester-buttons-1.webp", "/images/Polyester-buttons-2.webp", "/images/Polyester-buttons-3.webp", "/images/Polyester-buttons-4.webp", "/images/Polyester-buttons-5.webp"]
   },
   {
     id: 8,

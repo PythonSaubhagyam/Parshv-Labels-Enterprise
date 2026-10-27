@@ -319,38 +319,133 @@
 }
 
 /* Responsive */
-@media(max-width:900px) {
-
+@media(max-width: 992px) {
   .who-we-are-grid,
   .quality-focus-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
 
   .one-stop-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-who-we-are,
+  .about-one-stop,
+  .about-why-choose,
+  .about-process,
+  .about-quality,
+  .about-cta {
+    padding: 70px 0;
   }
 }
 
-@media(max-width:600px) {
+@media(max-width: 768px) {
+  .who-we-are-grid,
+  .quality-focus-grid {
+    text-align: center;
+    gap: 32px;
+  }
 
-  .one-stop-grid,
+  .who-we-are-content h2,
+  .who-we-are-content p {
+    text-align: center;
+  }
+
+  .who-we-are-visual img {
+    max-width: 440px;
+    margin: 0 auto;
+    display: block;
+  }
+
   .why-choose-grid {
+    max-width: 500px;
+    margin: 30px auto 0;
+  }
+
+  .why-card {
+    text-align: center;
+  }
+
+  .quality-focus-content {
+    text-align: center;
+  }
+
+  .quality-focus-list {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 20px auto;
+  }
+
+  .quality-focus-visual img {
+    max-width: 440px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media(max-width: 600px) {
+  .about-hero {
+    min-height: 380px;
+    padding: 60px 16px;
+  }
+
+  .about-hero-content h1 {
+    font-size: clamp(30px, 8vw, 44px);
+    margin-bottom: 16px;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+  }
+
+  .about-who-we-are,
+  .about-one-stop,
+  .about-why-choose,
+  .about-process,
+  .about-quality,
+  .about-cta {
+    padding: 50px 0;
+  }
+
+  .one-stop-grid {
     grid-template-columns: 1fr;
+  }
+
+  .solution-card {
+    padding: 24px 20px;
+  }
+
+  .why-card {
+    padding: 26px 20px;
   }
 
   .process-step {
     flex-direction: column;
     text-align: center;
     gap: 10px;
-    padding: 20px;
+    padding: 22px 18px;
+  }
+
+  .about-cta h2 {
+    font-size: clamp(26px, 7vw, 36px);
   }
 
   .about-cta-actions {
     flex-direction: column;
+    width: 100%;
+    gap: 12px;
   }
 
   .about-cta-actions .btn {
+    width: 100%;
     justify-content: center;
   }
 }

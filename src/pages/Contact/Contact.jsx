@@ -26,17 +26,34 @@ export default function Contact() {
     setSuccessMessage("");
     setErrorMessage("");
 
+    const formattedMessage = `New inquiry from Contact Page:
+
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Subject: ${formData.subject}
+
+• Message:
+${formData.message}
+
+• Submitted at: ${new Date().toLocaleString()}`;
+
     try {
       await emailjs.send(
-        "service_ykkfmjl",
-        "template_mi7yvzo",
+        "service_hr1zavb",
+        "template_7747kav",
         {
+          name: formData.name,
           from_name: formData.name,
+          email: formData.email,
           from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+          reply_to: formData.email,
+          title: formData.subject || `Inquiry from ${formData.name}`,
+          subject: formData.subject || `Inquiry from ${formData.name}`,
+          time: new Date().toLocaleString(),
+          user_message: formData.message,
+          message: formattedMessage,
         },
-        "g0En59tujVOlhnIkY"
+        "YQOYwCDYGjkk3k22p"
       );
 
       setSuccessMessage("Message sent successfully!");

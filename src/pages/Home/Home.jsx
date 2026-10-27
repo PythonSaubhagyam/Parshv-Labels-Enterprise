@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ChevronRight, Facebook, Instagram, Linkedin, Menu, Play, X, Award, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, ChevronRight, Facebook, Instagram, Linkedin, Menu, Play, X, Award, Users, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { products } from "../../data/products";
-import heroImage from "../../assets/images/Shirt-Labels-Set.png";
-import denimImage from "../../assets/images/Denim-Labels-Set.png";
-import kurtiImage from "../../assets/images/Kurti-Labels-Set.png";
+import heroImage from "../../assets/images/Shirt-Labels-Set.webp";
+import denimImage from "../../assets/images/Denim-Labels-Set.webp";
+import kurtiImage from "../../assets/images/Kurti-Labels-Set.webp";
 
 const slides = [
   { image: heroImage, label: "SHIRT LABELING", title: <>Details that make every <em>shirt</em> memorable.</>, copy: "Woven labels, satin labels, hang tags and polyester buttons made to give tailored shirts a refined, recognisable finish." },
@@ -17,6 +18,56 @@ const View = ({ children, className = "" }) => <motion.div className={className}
 
 function Home() {
   const [slide, setSlide] = useState(0); const [paused, setPaused] = useState(false); const current = slides[slide];
+  const [callForm, setCallForm] = useState({ name: "", email: "", phone: "" });
+  const [isSubmittingCall, setIsSubmittingCall] = useState(false);
+  const [callSuccess, setCallSuccess] = useState("");
+  const [callError, setCallError] = useState("");
+
+  const handleCallChange = (e) => {
+    setCallForm({ ...callForm, [e.target.name]: e.target.value });
+    if (callSuccess) setCallSuccess("");
+    if (callError) setCallError("");
+  };
+
+  const handleCallSubmit = async (e) => {
+    e.preventDefault();
+    if (isSubmittingCall) return;
+
+    setIsSubmittingCall(true);
+    setCallSuccess("");
+    setCallError("");
+
+    try {
+      await emailjs.send(
+        "service_hr1zavb",
+        "template_7747kav",
+        {
+          from_name: callForm.name,
+          name: callForm.name,
+          from_email: callForm.email,
+          email: callForm.email,
+          phone: callForm.phone,
+          contact_number: callForm.phone,
+          phone_number: callForm.phone,
+          title: `Request a Call from ${callForm.name} (${callForm.phone})`,
+          subject: `Request a Call from ${callForm.name} (${callForm.phone})`,
+          time: new Date().toLocaleString(),
+          message: `New "Request a Call" inquiry from your website:\n\n• Name: ${callForm.name}\n• Email: ${callForm.email}\n• Contact Number: ${callForm.phone}\n• Requested at: ${new Date().toLocaleString()}`,
+          to_email: "sales@parshvlabels.com",
+        },
+        "YQOYwCDYGjkk3k22p"
+      );
+
+      setCallSuccess("Thank you! Your call request has been sent to our sales team. We will call you shortly.");
+      setCallForm({ name: "", email: "", phone: "" });
+    } catch (error) {
+      console.error("EmailJS call request error:", error);
+      setCallError("Failed to send request. Please try again or contact us directly at sales@parshvlabels.com.");
+    } finally {
+      setIsSubmittingCall(false);
+    }
+  };
+
   const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
   useEffect(() => { if (paused) return undefined; const timer = setInterval(() => setSlide(value => (value + 1) % slides.length), 4000); return () => clearInterval(timer); }, [paused]);/*hero section speed for set 3 */
   return <>
@@ -46,7 +97,7 @@ function Home() {
       <section id="about" className="about-section">
         <div className="container about-grid">
           <View>
-            <img className="about-image" src="/images/small-labels-clubbed-image.png" alt="Garment labeling collection" />
+            <img className="about-image" src="/images/small-labels-clubbed-image.webp" alt="Garment labeling collection" />
           </View><View>
             <div className="eyebrow"><span />ABOUT PARSHV ENTERPRISE</div>
             <h2>Small details. <span>Big brand impact.</span></h2>
@@ -100,7 +151,7 @@ function Home() {
             <p>From precise production to final inspection, our process protects the finish, consistency and lasting quality your brand deserves.</p>
           </View>
           <div className="process-grid"><View className="process-card">
-            <img src="/images/Process making Woven Label.png" alt="Garment label production process" />
+            <img src="/images/Process making Woven Label.webp" alt="Garment label production process" />
             <div>
               <small>01 — PRODUCTION</small>
               <h3>Made with precision</h3>
@@ -108,7 +159,7 @@ function Home() {
             </div>
           </View>
             <View className="process-card">
-              <img src="/images/Process-making-Printed-Label.png" alt="Quality inspection of garment labels" />
+              <img src="/images/Process-making-Printed-Label.webp" alt="Quality inspection of garment labels" />
               <div>
                 <small>02 — QUALITY CHECK</small>
                 <h3>Inspected with care</h3>
@@ -155,20 +206,60 @@ function Home() {
             </div>
           </View>
           <View className="contact-card">
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form" onSubmit={handleCallSubmit}>
               <div className="form-group">
                 <label>YOUR NAME</label>
-                <input type="text" placeholder="Enter your full name" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={callForm.name}
+                  onChange={handleCallChange}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label>YOUR EMAIL ID</label>
-                <input type="email" placeholder="Enter your email address" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  value={callForm.email}
+                  onChange={handleCallChange}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label>CONTACT NUMBER</label>
-                <input type="tel" placeholder="Enter your phone number" required />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={callForm.phone}
+                  onChange={handleCallChange}
+                  required
+                />
               </div>
-              <button type="submit" className="btn btn-yellow">Request a call <ArrowRight size={18} /></button>
+              <button type="submit" className="btn btn-yellow" disabled={isSubmittingCall}>
+                {isSubmittingCall ? (
+                  <>Sending request... <Loader2 size={18} style={{ animation: "spin 1s linear infinite", marginLeft: "6px" }} /></>
+                ) : (
+                  <>Request a call <ArrowRight size={18} /></>
+                )}
+              </button>
+
+              {callSuccess && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#166534', background: '#f0fdf4', border: '1px solid #bbf7d0', padding: '12px 14px', borderRadius: '6px', fontSize: '14px', lineHeight: '1.4' }}>
+                  <CheckCircle size={18} style={{ flexShrink: 0, color: '#16a34a' }} />
+                  <span>{callSuccess}</span>
+                </div>
+              )}
+              {callError && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#991b1b', background: '#fef2f2', border: '1px solid #fecaca', padding: '12px 14px', borderRadius: '6px', fontSize: '14px', lineHeight: '1.4' }}>
+                  <AlertCircle size={18} style={{ flexShrink: 0, color: '#dc2626' }} />
+                  <span>{callError}</span>
+                </div>
+              )}
             </form>
           </View>
         </div>

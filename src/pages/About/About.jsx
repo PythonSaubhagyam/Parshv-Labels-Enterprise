@@ -179,7 +179,7 @@ export default function About() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} 
             className="quality-focus-visual"
           >
-            <img src="/images/quality-image.png" alt="Quality Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <img src="/images/quality-image.webp" alt="Quality Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
           </motion.div>
           
           <div className="quality-focus-content">
